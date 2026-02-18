@@ -11,7 +11,7 @@
   <main>
 
     <!-- Profile -->
-    <section id="profile">
+    <section id="profile" class="fade-up fade-delay-1">
       <h2>森宗伶太 | Ryota Morimune</h2>
       <p>広島工業大学 情報コミュニケーション学科 2年</p>
       <p>「仲間と一緒に成果物を作り上げ、それを使ってもらい感謝されることを目標！」</p>
@@ -25,7 +25,7 @@
     </section>
 
     <!-- About -->
-    <section id="about">
+    <section id="about" class="fade-up fade-delay-2">
       <h3>💡 About Me</h3>
       <p>
         将来は、サービス開発に携わりながら、技術とマネジメントの両方を理解し、
@@ -37,7 +37,7 @@
     </section>
 
     <!-- Skills -->
-    <section id="skills">
+    <section id="skills" class="fade-up fade-delay-3">
       <h3>🛠 Skills</h3>
       <ul>
         <li>HTML / CSS / JavaScript</li>
@@ -47,7 +47,7 @@
     </section>
 
     <!-- Output -->
-    <section id="output">
+    <section id="output" class="fade-up fade-delay-4">
       <h3>📂 Output</h3>
       <ul>
 
@@ -87,7 +87,7 @@
     </section>
 
     <!-- Experience -->
-    <section id="experience">
+    <section id="experience" class="fade-up fade-delay-5">
       <h3>🚀 Experience</h3>
       <ul>
         <li>
@@ -108,7 +108,7 @@
     </section>
 
     <!-- Current -->
-    <section id="current">
+    <section id="current" class="fade-up fade-delay-5">
       <h3>📈 Currently Working On</h3>
       <ul>
         <li>ToDoアプリ・カレンダーアプリを個人開発中</li>
@@ -120,7 +120,7 @@
     </section>
 
     <!-- Goal -->
-    <section id="goal">
+    <section id="goal" class="fade-up fade-delay-5">
       <h3>🌱 Next Goal</h3>
       <ul>
         <li>Reactの習得</li>
@@ -132,6 +132,25 @@
     </section>
 
   </main>
+
+  <!-- Scroll Animation Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".fade-up");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    elements.forEach(el => observer.observe(el));
+  });
+  </script>
 
 </body>
 </html>
