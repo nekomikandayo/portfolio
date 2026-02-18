@@ -2,160 +2,190 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ryota Morimune | Portfolio</title>
+  <meta name="description" content="エンジニア 森宗伶太のポートフォリオサイト。">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-  <nav class="container">
-    <div class="logo">Ryota</div>
-    <ul>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#output">Output</a></li>
-      <li><a href="#goal">Goal</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="hero">
-  <div class="hero-inner">
-    <h1>Hi, I'm Ryota</h1>
-    <p>Future Developer / Service Creator</p>
-    <a href="#output" class="hero-btn">View My Work</a>
+  <div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
   </div>
-</section>
+
+  <header id="header">
+    <nav class="container nav-container">
+      <a href="#" class="logo">Ryota<span>.Dev</span></a>
+      <ul class="nav-list">
+        <li><a href="#profile" class="nav-link">Profile</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#output" class="nav-link">Output</a></li>
+        <li><a href="#contact" class="nav-button">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="container hero-content fade-up">
+      <span class="hero-tag">Welcome to my portfolio</span>
+      <h1>森宗伶太 | <span class="text-gradient">Ryota Morimune</span></h1>
+      <p>
+        広島工業大学 情報コミュニケーション学科 3年。<br>
+        「仲間と一緒に成果物を作り上げ、それを使ってもらい感謝されることを目標！」
+      </p>
+      <div class="hero-actions">
+        <a href="https://nekomikandayo.github.io/portfolio/" target="_blank" class="btn btn-primary">
+          Portfolio
+        </a>
+        <a href="https://github.com/nekomikandayo" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
 
   <main>
 
-    <!-- Profile -->
-    <section id="profile" class="fade-up fade-delay-1">
-      <h2>森宗伶太 | Ryota Morimune</h2>
-      <p>広島工業大学 情報コミュニケーション学科 2年</p>
-      <p>「仲間と一緒に成果物を作り上げ、それを使ってもらい感謝されることを目標！」</p>
-
-      <p>
-        🔗 
-        <a href="https://github.com/nekomikandayo" target="_blank">
-          GitHubプロフィールを見る
-        </a>
-      </p>
+    <section id="profile" class="section">
+      <div class="container fade-up">
+        <h2 class="section-title">Profile</h2>
+        <div class="card profile-card">
+          <h3>森宗 伶太 <span class="sub-name">| Ryota Morimune</span></h3>
+          <p class="role">広島工業大学 情報コミュニケーション学科 3年</p>
+          <p class="mission">
+            仲間と一緒に成果物を作り上げ、それを使ってもらい感謝されるエンジニアを目指しています。
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="fade-up fade-delay-2">
-      <h3>💡 About Me</h3>
-      <p>
-        将来は、サービス開発に携わりながら、技術とマネジメントの両方を理解し、
-        プロジェクトを進めていけるリーダーを目指しています。
-      </p>
-      <p>
-        現在は、長期インターンに向けて実装力・構想力を伸ばすことを目標に取り組んでいます。
-      </p>
+    <section id="about" class="section">
+      <div class="container fade-up">
+        <h2 class="section-title">About Me</h2>
+        <div class="grid-2">
+          <div class="text-block">
+            <p>
+              技術だけでなく、設計・テスト・運営など全体像を意識して行動することを大切にしています。
+            </p>
+            <p>
+              Webアプリ開発を通して実装力を磨きながら、
+              将来的にはチームを率いる立場として価値を出せるエンジニアを目指しています。
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="fade-up fade-delay-3">
-      <h3>🛠 Skills</h3>
-      <ul>
-        <li>HTML / CSS / JavaScript</li>
-        <li>C（大学で2年間学習）</li>
-        <li>基本情報技術者試験 合格</li>
-      </ul>
+    <section id="skills" class="section">
+      <div class="container fade-up">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🎨</div>
+            <h3>Frontend</h3>
+            <p>HTML / CSS / JavaScript</p>
+            <span class="tag">Web Development</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Programming</h3>
+            <p>C（大学で2年間学習）</p>
+            <span class="tag">University</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📜</div>
+            <h3>Certification</h3>
+            <p>基本情報技術者試験 合格</p>
+            <span class="tag">Qualified</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Output -->
-    <section id="output" class="fade-up fade-delay-4">
-      <h3>📂 Output</h3>
-      <ul>
+    <section id="output" class="section">
+      <div class="container fade-up">
+        <h2 class="section-title">Output</h2>
 
-        <li>
-          <strong>簡易電卓アプリ</strong><br>
-          境界値分析を行い、想定外の入力や小数計算時の誤差によるエラーが発生しないように設計。
-          テスト設計を行い、異常系も含めた動作確認を実施。<br>
+        <div class="card">
+          <h3>🧮 簡易電卓アプリ</h3>
+          <p>
+            境界値分析を実施し、異常系も含めたテスト設計を行いました。
+            想定外入力でもエラーが発生しない設計を意識。
+          </p>
+          <p>
+            🌐 <a href="https://nekomikandayo.github.io/calculator-app/" target="_blank">Demo</a><br>
+            💻 <a href="https://github.com/nekomikandayo/calculator-app" target="_blank">Source Code</a>
+          </p>
+        </div>
 
-          🌐 
-          <a href="https://nekomikandayo.github.io/calculator-app/" target="_blank">
-            アプリを見る
-          </a>
-          |
-          💻 
-          <a href="https://github.com/nekomikandayo/calculator-app" target="_blank">
-            GitHubを見る
-          </a>
-        </li>
+        <div class="card">
+          <h3>🍅 ポモドーロタイマー / 猫の屈伸</h3>
+          <p>
+            画面遷移やタイマー状態の変化を事前に設計。
+            UIの動作フローを整理してから実装し、修正コストを削減。
+          </p>
+          <p>
+            🌐 <a href="https://nekomikandayo.github.io/cat-pomodoro/" target="_blank">Demo</a><br>
+            💻 <a href="https://github.com/nekomikandayo/cat-pomodoro" target="_blank">Source Code</a>
+          </p>
+        </div>
 
-        <li>
-          <strong>ポモドーロタイマー / 猫の屈伸</strong><br>
-          画面遷移やタイマー状態の変化を事前に設計し、どのタイミングでUIがどう動くかを明確化。
-          設計段階で動作フローを整理することで、実装時の修正を最小限に抑えた。<br>
-
-          🌐 
-          <a href="https://nekomikandayo.github.io/cat-pomodoro/" target="_blank">
-            アプリを見る
-          </a>
-          |
-          💻 
-          <a href="https://github.com/nekomikandayo/cat-pomodoro" target="_blank">
-            GitHubを見る
-          </a>
-        </li>
-
-      </ul>
+      </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience" class="fade-up fade-delay-5">
-      <h3>🚀 Experience</h3>
-      <ul>
-        <li>
-          5日間のインターンでWindows簡易電卓を個人開発  
-          （四則演算・全消去・バックスペース・小数計算を実装）  
-          基本設計・詳細設計・テスト設計から実装まで一貫して担当
-        </li>
-        <li>
-          大学内で友達作り支援イベントを2人で企画・運営（参加者6名）
-        </li>
-        <li>
-          基本情報技術者試験に2か月学習で一発合格
-        </li>
-        <li>
-          小学生にScratchを指導（約1か月）
-        </li>
-      </ul>
+    <section id="experience" class="section">
+      <div class="container fade-up">
+        <h2 class="section-title">Experience</h2>
+        <ul class="goal-list">
+          <li>5日間のインターンでWindows簡易電卓を個人開発（設計〜テストまで担当）</li>
+          <li>大学内で友達作り支援イベントを2人で企画・運営（参加者6名）</li>
+          <li>基本情報技術者試験に一発合格（2か月学習）</li>
+          <li>小学生にScratchを指導（1か月）</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Current -->
-    <section id="current" class="fade-up fade-delay-5">
-      <h3>📈 Currently Working On</h3>
-      <ul>
-        <li>ToDoアプリ・カレンダーアプリを個人開発中</li>
-        <li>GitHubを活用した開発記録の習慣化</li>
-        <li>The Web Developer Bootcamp 受講中</li>
-        <li>応用情報技術者試験 勉強中</li>
-        <li>第2回友達作り支援イベント企画中</li>
-      </ul>
+    <section id="current" class="section">
+      <div class="container fade-up">
+        <h2 class="section-title">Currently Working On</h2>
+        <ul class="goal-list">
+          <li>ToDoアプリ・カレンダーアプリを共同開発中</li>
+          <li>GitHubを活用した開発記録の習慣化</li>
+          <li>The Web Developer Bootcamp 受講</li>
+          <li>大学内 第2回友達作り支援イベント企画</li>
+          <li>応用情報技術者試験 勉強中</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Goal -->
-    <section id="goal" class="fade-up fade-delay-5">
-      <h3>🌱 Next Goal</h3>
-      <ul>
-        <li>Reactの習得</li>
-        <li>サーバーサイド理解</li>
-        <li>チーム開発経験</li>
-        <li>応用情報技術者 合格</li>
-        <li>マイクラでのプログラミング指導</li>
-      </ul>
+    <section id="goal" class="section">
+      <div class="container fade-up">
+        <h2 class="section-title">Next Goal</h2>
+        <ul class="goal-list">
+          <li>Reactの習得</li>
+          <li>サーバーサイド理解</li>
+          <li>チーム開発経験</li>
+          <li>応用情報技術者 合格</li>
+          <li>小学生にマイクラでのプログラミング指導</li>
+        </ul>
+      </div>
     </section>
 
   </main>
 
-  <!-- Scroll Animation Script -->
-  <script src="script.js"></script>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Ryota Morimune. All Rights Reserved.</p>
+    </div>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
-
-
