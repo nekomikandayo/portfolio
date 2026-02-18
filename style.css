@@ -1,7 +1,11 @@
 /* =======================
    Base
 ======================= */
-
+:root {
+  --primary-color: #4a90e2;
+  --bg-gray: #f8f9fb;
+  --section-margin: 120px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -209,6 +213,7 @@ main section:nth-child(odd) {
   }
 
 }
+
 
 
 
