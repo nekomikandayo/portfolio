@@ -1,115 +1,427 @@
-/* =======================
-   Base
-======================= */
+/* =========================================
+   1. Variables & Reset (Design System)
+   ========================================= */
 :root {
-  --primary-color: #4a90e2;
-  --bg-gray: #f8f9fb;
-  --section-margin: 120px;
+  /* Colors */
+  --color-bg: #f8f9fc;
+  --color-text-main: #2d3748;
+  --color-text-sub: #718096;
+  --color-primary: #4e54c8;
+  --color-secondary: #8f94fb;
+  --color-accent: #00d2ff;
+  --color-white: #ffffff;
+  --color-glass: rgba(255, 255, 255, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.4);
+
+  /* Fonts */
+  --font-main: 'Poppins', 'Noto Sans JP', sans-serif;
+  
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 120px;
+
+  /* UI */
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Header height offset */
+}
+
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background-color: #f8f9fb;
-  color: #333;
-  line-height: 1.6;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.8;
+  overflow-x: hidden;
+  position: relative;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: 0.3s;
-}
-
-a:hover {
-  color: #4a90e2;
-}
-
+/* =========================================
+   2. Utilities & Components
+   ========================================= */
 .container {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--spacing-md);
 }
 
-/* =======================
-   Section Layout Improve
-======================= */
-
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 80px 20px;
+.section {
+  padding: var(--spacing-xl) 0;
+  position: relative;
+  z-index: 10;
 }
 
-section {
-  margin-bottom: 120px;
-}
-
-section h2,
-section h3 {
-  font-size: 32px;
-  margin-bottom: 30px;
+/* Section Title with Gradient Underline */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
   position: relative;
   display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-section h3::after {
-  content: "";
+.section-title::after {
+  content: '';
   display: block;
-  width: 40px;
-  height: 3px;
-  background: #4a90e2;
-  margin-top: 8px;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  margin-top: 10px;
   border-radius: 2px;
 }
 
-/* =======================
-   Lists Improve
-======================= */
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-li {
-  margin-bottom: 20px;
-  line-height: 1.8;
-}
-
-/* =======================
-   Output Links
-======================= */
-
-#output a {
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 32px;
+  border-radius: 50px;
   font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-#output li {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  transition: 0.3s;
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(78, 84, 200, 0.4);
 }
 
-#output li:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 84, 200, 0.6);
 }
 
-/* =======================
-   Fade Animation
-======================= */
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-text-main);
+  border: 1px solid #e2e8f0;
+}
 
+.btn-secondary:hover {
+  background: #f7fafc;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   3. Header & Nav (Glassmorphism)
+   ========================================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+/* JSで付与するクラス：スクロール時の変化 */
+header.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px); /* すりガラス効果 */
+  box-shadow: var(--shadow-sm);
+  height: 70px; /* 少し縮める */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--color-primary);
+}
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--color-text-main);
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-primary);
+  transition: var(--transition);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-button {
+  padding: 8px 20px;
+  background: var(--color-text-main);
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.nav-button:hover {
+  background: var(--color-primary);
+}
+
+/* =========================================
+   4. Hero Section
+   ========================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(78, 84, 200, 0.1);
+  color: var(--color-primary);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 4rem; /* 大きくインパクトを */
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--color-text-sub);
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* Animated Blobs Background */
+.background-blobs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 10s infinite alternate;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: #ff9a9e;
+  top: -10%;
+  right: -10%;
+}
+
+.blob-2 {
+  width: 600px;
+  height: 600px;
+  background: #a18cd1;
+  bottom: -10%;
+  left: -20%;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* =========================================
+   5. Content Cards (Glass & Hover)
+   ========================================= */
+.card, .project-card, .skill-card {
+  background: var(--color-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover, .project-card:hover, .skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(78, 84, 200, 0.2);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  background: #edf2f7;
+  border-radius: 12px;
+  margin-top: 10px;
+  color: var(--color-text-sub);
+}
+
+/* Output (Projects) */
+.output-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.project-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.project-desc {
+  color: var(--color-text-sub);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.tech-stack span {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  color: var(--color-text-sub);
+}
+
+.card-links a {
+  margin-right: 20px;
+  font-weight: 600;
+  color: var(--color-text-main);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+}
+
+.card-links a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Goal List */
+.goal-list {
+  list-style: none;
+}
+.goal-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid #edf2f7;
+  position: relative;
+  padding-left: 30px;
+}
+.goal-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--color-text-sub);
+  font-size: 0.9rem;
+  margin-top: 80px;
+}
+
+/* =========================================
+   6. Animation Utility
+   ========================================= */
 .fade-up {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .fade-up.show {
@@ -117,103 +429,10 @@ li {
   transform: translateY(0);
 }
 
-header {
-  position: fixed;
-  width: 100%;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  z-index: 1000;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-}
-
-nav ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-}
-
-nav a {
-  font-weight: 500;
-}
-
-.hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #4a90e2, #6a82fb);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 60px;
-  margin-bottom: 20px;
-}
-
-.hero-btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 12px 28px;
-  background: white;
-  color: #4a90e2;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-main section:nth-child(even) {
-  background: #ffffff;
-}
-
-main section:nth-child(odd) {
-  background: #f3f6fa;
-}
-
-
-
-/* 遅延用クラス */
-
-.fade-delay-1 { transition-delay: 0.1s; }
-.fade-delay-2 { transition-delay: 0.2s; }
-.fade-delay-3 { transition-delay: 0.3s; }
-.fade-delay-4 { transition-delay: 0.4s; }
-.fade-delay-5 { transition-delay: 0.5s; }
-
-/* =======================
-   Responsive
-======================= */
-
+/* Responsive */
 @media (max-width: 768px) {
-
-  main {
-    padding: 60px 16px;
-  }
-
-  section {
-    margin-bottom: 80px;
-  }
-
-  section h2,
-  section h3 {
-    font-size: 24px;
-  }
-
-  li {
-    font-size: 14px;
-  }
-
+  .hero h1 { font-size: 2.5rem; }
+  .section { padding: 80px 0; }
+  .nav-list { display: none; } /* 本番ではハンバーガーメニュー実装推奨 */
+  .grid-2 { grid-template-columns: 1fr; }
 }
-
-
-
-
