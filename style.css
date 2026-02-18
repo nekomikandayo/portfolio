@@ -37,13 +37,13 @@ nav a:hover {
 }
 
 /* 共通セクション */
-section {
-  padding: 100px 20px;
-}
-
 main {
   max-width: 900px;
   margin: 0 auto;
+}
+
+section {
+  padding: 100px 20px;
 }
 
 /* Hero */
@@ -69,24 +69,38 @@ h2 {
   padding-left: 10px;
 }
 
-/* Projects */
-article {
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+/* Output（プロジェクト） */
+#output ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#output li {
   margin-bottom: 50px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
 }
 
-article h3 {
-  margin-bottom: 10px;
-}
-
-article a {
+#output a {
   display: inline-block;
   margin-top: 10px;
+  margin-right: 10px;
   text-decoration: none;
   color: #0077ff;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* Skills */
+#output a:hover {
+  text-decoration: underline;
+}
+
+/* Skills / Experience など */
 ul {
   padding-left: 20px;
 }
@@ -114,5 +128,9 @@ footer {
 
   section {
     padding: 60px 20px;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
   }
 }
