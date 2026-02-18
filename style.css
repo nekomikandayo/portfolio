@@ -113,6 +113,57 @@ li {
   transform: translateY(0);
 }
 
+header {
+  position: fixed;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  font-weight: 500;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #4a90e2, #6a82fb);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 28px;
+  background: white;
+  color: #4a90e2;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+
 /* 遅延用クラス */
 
 .fade-delay-1 { transition-delay: 0.1s; }
@@ -145,3 +196,4 @@ li {
   }
 
 }
+
