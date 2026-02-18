@@ -163,6 +163,10 @@ nav a {
   font-weight: bold;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* 遅延用クラス */
 
@@ -196,4 +200,5 @@ nav a {
   }
 
 }
+
 
