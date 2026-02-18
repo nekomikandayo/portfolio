@@ -167,6 +167,15 @@ html {
   scroll-behavior: smooth;
 }
 
+main section:nth-child(even) {
+  background: #ffffff;
+}
+
+main section:nth-child(odd) {
+  background: #f3f6fa;
+}
+
+
 
 /* 遅延用クラス */
 
@@ -200,5 +209,6 @@ html {
   }
 
 }
+
 
 
