@@ -1,0 +1,118 @@
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.7;
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* ナビ */
+header {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #0077ff;
+}
+
+/* 共通セクション */
+section {
+  padding: 100px 20px;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Hero */
+#hero {
+  text-align: center;
+  padding-top: 120px;
+}
+
+#hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  margin-bottom: 10px;
+}
+
+/* 見出し */
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  border-left: 4px solid #0077ff;
+  padding-left: 10px;
+}
+
+/* Projects */
+article {
+  margin-bottom: 50px;
+}
+
+article h3 {
+  margin-bottom: 10px;
+}
+
+article a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #0077ff;
+  font-weight: bold;
+}
+
+/* Skills */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #eee;
+  margin-top: 80px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+}
