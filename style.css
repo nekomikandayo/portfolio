@@ -39,7 +39,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Header height offset */
+  scroll-padding-top: 80px; 
 }
 
 body {
@@ -66,7 +66,6 @@ body {
   z-index: 10;
 }
 
-/* Section Title with Gradient Underline */
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -136,12 +135,11 @@ header {
   align-items: center;
 }
 
-/* JSで付与するクラス：スクロール時の変化 */
 header.scrolled {
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px); /* すりガラス効果 */
+  backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
-  height: 70px; /* 少し縮める */
+  height: 70px;
 }
 
 .nav-container {
@@ -232,7 +230,7 @@ header.scrolled {
 }
 
 .hero h1 {
-  font-size: 4rem; /* 大きくインパクトを */
+  font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
@@ -316,33 +314,18 @@ header.scrolled {
   border-color: rgba(78, 84, 200, 0.2);
 }
 
-/* Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.skill-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.tag {
-  display: inline-block;
-  font-size: 0.8rem;
-  padding: 4px 12px;
-  background: #edf2f7;
-  border-radius: 12px;
-  margin-top: 10px;
-  color: var(--color-text-sub);
-}
-
-/* Output (Projects) */
+/* Output (Projects) Grid & Specific Card Styles */
 .output-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-category {
@@ -356,23 +339,30 @@ header.scrolled {
 }
 
 .project-desc {
+  flex-grow: 1;
   color: var(--color-text-sub);
   margin-bottom: 20px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .tech-stack {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-bottom: 24px;
 }
 
 .tech-stack span {
   font-size: 0.75rem;
   padding: 4px 10px;
-  border: 1px solid #e2e8f0;
+  background: rgba(78, 84, 200, 0.05);
+  border: 1px solid rgba(78, 84, 200, 0.1);
   border-radius: 20px;
-  color: var(--color-text-sub);
+  color: var(--color-primary);
+}
+
+.card-links {
+  margin-top: auto;
 }
 
 .card-links a {
@@ -389,7 +379,19 @@ header.scrolled {
   border-bottom-color: var(--color-primary);
 }
 
-/* Goal List */
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* List Styles */
 .goal-list {
   list-style: none;
 }
@@ -429,10 +431,12 @@ footer {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* =========================================
+   7. Responsive Design
+   ========================================= */
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.5rem; }
   .section { padding: 80px 0; }
-  .nav-list { display: none; } /* 本番ではハンバーガーメニュー実装推奨 */
-  .grid-2 { grid-template-columns: 1fr; }
+  .nav-list { display: none; }
+  .hero-actions { flex-direction: column; }
 }
