@@ -39,7 +39,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Header height offset */
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -66,7 +66,6 @@ body {
   z-index: 10;
 }
 
-/* Section Title with Gradient Underline */
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -123,7 +122,7 @@ body {
 }
 
 /* =========================================
-   3. Header & Nav (Glassmorphism)
+   3. Header & Nav
    ========================================= */
 header {
   position: fixed;
@@ -136,12 +135,11 @@ header {
   align-items: center;
 }
 
-/* JSで付与するクラス：スクロール時の変化 */
 header.scrolled {
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px); /* すりガラス効果 */
+  backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
-  height: 70px; /* 少し縮める */
+  height: 70px;
 }
 
 .nav-container {
@@ -206,7 +204,7 @@ header.scrolled {
 }
 
 /* =========================================
-   4. Hero Section
+   4. Hero Section & Animated Blobs
    ========================================= */
 .hero {
   min-height: 100vh;
@@ -232,7 +230,7 @@ header.scrolled {
 }
 
 .hero h1 {
-  font-size: 4rem; /* 大きくインパクトを */
+  font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
@@ -256,7 +254,6 @@ header.scrolled {
   gap: 16px;
 }
 
-/* Animated Blobs Background */
 .background-blobs {
   position: fixed;
   top: 0;
@@ -276,19 +273,15 @@ header.scrolled {
 }
 
 .blob-1 {
-  width: 500px;
-  height: 500px;
+  width: 500px; height: 500px;
   background: #ff9a9e;
-  top: -10%;
-  right: -10%;
+  top: -10%; right: -10%;
 }
 
 .blob-2 {
-  width: 600px;
-  height: 600px;
+  width: 600px; height: 600px;
   background: #a18cd1;
-  bottom: -10%;
-  left: -20%;
+  bottom: -10%; left: -20%;
   animation-delay: -5s;
 }
 
@@ -298,9 +291,9 @@ header.scrolled {
 }
 
 /* =========================================
-   5. Content Cards (Glass & Hover)
+   5. Card Styles (Common)
    ========================================= */
-.card, .project-card, .skill-card {
+.card, .project-card, .skill-card, .exp-card {
   background: var(--color-glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--color-glass-border);
@@ -310,24 +303,41 @@ header.scrolled {
   transition: var(--transition);
 }
 
-.card:hover, .project-card:hover, .skill-card:hover {
+.card:hover, .project-card:hover, .skill-card:hover, .exp-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(78, 84, 200, 0.2);
 }
 
-/* Skills Grid */
+/* =========================================
+   6. Section Specific Grids
+   ========================================= */
+
+/* Experience */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.exp-date {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: block;
+}
+.exp-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+/* Skills */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
-
-.skill-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
+.skill-icon { font-size: 3rem; margin-bottom: 20px; }
 .tag {
   display: inline-block;
   font-size: 0.8rem;
@@ -344,29 +354,15 @@ header.scrolled {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
 }
-
 .project-category {
   font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   color: var(--color-primary);
   font-weight: 700;
-  display: block;
+  text-transform: uppercase;
   margin-bottom: 10px;
+  display: block;
 }
-
-.project-desc {
-  color: var(--color-text-sub);
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-}
-
-.tech-stack {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 24px;
-}
-
+.tech-stack { display: flex; gap: 10px; margin: 15px 0 24px; }
 .tech-stack span {
   font-size: 0.75rem;
   padding: 4px 10px;
@@ -374,7 +370,6 @@ header.scrolled {
   border-radius: 20px;
   color: var(--color-text-sub);
 }
-
 .card-links a {
   margin-right: 20px;
   font-weight: 600;
@@ -383,56 +378,50 @@ header.scrolled {
   border-bottom: 1px solid transparent;
   transition: 0.2s;
 }
+.card-links a:hover { color: var(--color-primary); border-bottom-color: var(--color-primary); }
 
-.card-links a:hover {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-primary);
-}
-
-/* Goal List */
-.goal-list {
-  list-style: none;
-}
+/* =========================================
+   7. Currently Working On & Footer
+   ========================================= */
+.goal-list { list-style: none; }
 .goal-list li {
   padding: 15px 0;
-  border-bottom: 1px solid #edf2f7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
   position: relative;
-  padding-left: 30px;
+  padding-left: 35px;
 }
+.goal-list li:last-child { border-bottom: none; }
 .goal-list li::before {
   content: '✔';
   position: absolute;
   left: 0;
   color: var(--color-primary);
+  font-weight: bold;
 }
 
-/* Footer */
 footer {
   text-align: center;
-  padding: 40px 0;
+  padding: 60px 0;
   color: var(--color-text-sub);
   font-size: 0.9rem;
-  margin-top: 80px;
 }
 
 /* =========================================
-   6. Animation Utility
+   8. Animation & Responsive
    ========================================= */
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2.5rem; }
+  .hero h1 { font-size: 2.8rem; }
+  .nav-list { display: none; } /* Mobile nav should be handled with JS hamburger if needed */
   .section { padding: 80px 0; }
-  .nav-list { display: none; } /* 本番ではハンバーガーメニュー実装推奨 */
-  .grid-2 { grid-template-columns: 1fr; }
+  .section-title { font-size: 2rem; }
 }
