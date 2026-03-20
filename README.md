@@ -52,12 +52,12 @@ https://nekomikandayo.github.io/portfolio/
 ---
 
 ### 📘 Reading Habit（習慣化読書アプリ）
-**短時間の読書を「振り返り」と「習慣化」につなげる読書支援Webアプリ**
+**短時間の読書を「振り返り」と「習慣化」につなげる読書支援Flutterアプリ**
 
 - 忙しい日常でも読書を継続できるよう設計
 - UI・画面遷移・データ構造を自分で設計
 - 読書時間の計測と、気づきの即時アウトプットで定着を支援
-- Firebaseと連携し、認証・データ保存を実装
+- Flutter (Dart) と Firebase を連携し、認証・データ保存を実装
 
 🌐 **Live Demo** https://reading-habit-app.web.app  
 
