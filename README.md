@@ -72,7 +72,7 @@ https://nekomikandayo.github.io/portfolio/
 - ユーザーが日々ストレスなく利用し続けられるUI/UXの構築
 - 即座に行動・検証を回すアジャイルな開発プロセスを意識
 
-💻 **Source Code** https://github.com/nekomikandayo/syuukannka
+💻 **Source Code** https://github.com/nekomikandayo/habit-tracker
 
 ---
 
