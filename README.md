@@ -40,6 +40,17 @@ https://nekomikandayo.github.io/portfolio/
 
 ---
 
+### 📝 TIL（Today I Learned）
+**日々の技術的な学びや課題解決のプロセスを言語化したナレッジベース**
+
+- フロントエンド技術やクリーンコードなどの学習記録を継続的にアウトプット
+- 「なぜその技術が必要か」「どう解決したか」という思考プロセスを言語化
+- チーム開発を見据え、暗黙知をなくしドキュメントに残す力を鍛錬
+
+💻 **Repository** https://github.com/nekomikandayo/TIL
+
+---
+
 ### 📘 Reading Habit（習慣化読書アプリ）
 **短時間の読書を「振り返り」と「習慣化」につなげる読書支援Webアプリ**
 
@@ -48,11 +59,20 @@ https://nekomikandayo.github.io/portfolio/
 - 読書時間の計測と、気づきの即時アウトプットで定着を支援
 - Firebaseと連携し、認証・データ保存を実装
 
-🌐 **Live Demo**  
-https://reading-habit-app.web.app  
+🌐 **Live Demo** https://reading-habit-app.web.app  
 
-💻 **Source Code**  
-https://github.com/nekomikandayo/reading-habit-app
+💻 **Source Code** https://github.com/nekomikandayo/reading-habit-app
+
+---
+
+### 🔄 syuukannka（習慣化アプリ）
+**ユーザーの継続をサポートする習慣化Webアプリケーション**
+
+- SaaSプロダクトの運用を見据え、保守性や拡張性を意識したコード設計を実践
+- ユーザーが日々ストレスなく利用し続けられるUI/UXの構築
+- 即座に行動・検証を回すアジャイルな開発プロセスを意識
+
+💻 **Source Code** https://github.com/nekomikandayo/syuukannka
 
 ---
 
@@ -62,11 +82,9 @@ https://github.com/nekomikandayo/reading-habit-app
 - 境界値分析を実施し、異常系も含めたテスト設計を実施
 - 想定外入力でもエラーが発生しない堅牢な設計を意識
 
-🌐 **Demo**  
-https://nekomikandayo.github.io/calculator-app/
+🌐 **Demo** https://nekomikandayo.github.io/calculator-app/
 
-💻 **Source Code**  
-https://github.com/nekomikandayo/calculator-app
+💻 **Source Code** https://github.com/nekomikandayo/calculator-app
 
 ---
 
@@ -77,14 +95,11 @@ https://github.com/nekomikandayo/calculator-app
 - UIの動作フローを整理してから実装し、修正コストを削減
 - LocalStorage を用いた学習記録の永続化・統計ページを実装
 
-🌐 **Demo**  
-https://nekomikandayo.github.io/cat-pomodoro/
+🌐 **Demo** https://nekomikandayo.github.io/cat-pomodoro/
 
-💻 **Source Code**  
-https://github.com/nekomikandayo/cat-pomodoro
+💻 **Source Code** https://github.com/nekomikandayo/cat-pomodoro
 
 ---
-
 ## 🚀 Experience
 - 5日間のインターンで Windows 簡易電卓を個人開発  
   （基本設計・詳細設計・テスト設計〜実装まで一貫して担当）
@@ -95,11 +110,11 @@ https://github.com/nekomikandayo/cat-pomodoro
 ---
 
 ## 📈 Currently Working On
-- ToDoアプリ・カレンダーアプリを共同開発中
 - GitHubを活用した開発記録の習慣化
 - The Web Developer Bootcamp 受講中
 - 大学内 第2回友達作り支援イベント企画
 - 応用情報技術者試験 勉強中
+- GitHub（TILリポジトリ）を活用した思考プロセス・開発記録の言語化と習慣化
 
 ---
 
