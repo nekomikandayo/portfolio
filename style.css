@@ -15,7 +15,7 @@
 
   /* Fonts */
   --font-main: 'Poppins', 'Noto Sans JP', sans-serif;
-  
+
   /* Spacing */
   --spacing-sm: 8px;
   --spacing-md: 24px;
@@ -273,27 +273,39 @@ header.scrolled {
 }
 
 .blob-1 {
-  width: 500px; height: 500px;
+  width: 500px;
+  height: 500px;
   background: #ff9a9e;
-  top: -10%; right: -10%;
+  top: -10%;
+  right: -10%;
 }
 
 .blob-2 {
-  width: 600px; height: 600px;
+  width: 600px;
+  height: 600px;
   background: #a18cd1;
-  bottom: -10%; left: -20%;
+  bottom: -10%;
+  left: -20%;
   animation-delay: -5s;
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(150px, 100px);
+  }
 }
 
 /* =========================================
-   5. Card Styles (Common)
+   5.   Styles (Common)
    ========================================= */
-.card, .project-card, .skill-card, .exp-card {
+.card,
+.project-card,
+.skill-card,
+.exp-card {
   background: var(--color-glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--color-glass-border);
@@ -303,7 +315,10 @@ header.scrolled {
   transition: var(--transition);
 }
 
-.card:hover, .project-card:hover, .skill-card:hover, .exp-card:hover {
+.card:hover,
+.project-card:hover,
+.skill-card:hover,
+.exp-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(78, 84, 200, 0.2);
@@ -313,12 +328,18 @@ header.scrolled {
    6. Section Specific Grids
    ========================================= */
 
+.profile-bold {
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
 /* Experience */
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
+
 .exp-date {
   font-size: 0.85rem;
   color: var(--color-primary);
@@ -326,6 +347,7 @@ header.scrolled {
   margin-bottom: 12px;
   display: block;
 }
+
 .exp-card h3 {
   margin-bottom: 12px;
   font-size: 1.25rem;
@@ -337,7 +359,12 @@ header.scrolled {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
-.skill-icon { font-size: 3rem; margin-bottom: 20px; }
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
 .tag {
   display: inline-block;
   font-size: 0.8rem;
@@ -354,6 +381,7 @@ header.scrolled {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
 }
+
 .project-category {
   font-size: 0.8rem;
   color: var(--color-primary);
@@ -362,7 +390,13 @@ header.scrolled {
   margin-bottom: 10px;
   display: block;
 }
-.tech-stack { display: flex; gap: 10px; margin: 15px 0 24px; }
+
+.tech-stack {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0 24px;
+}
+
 .tech-stack span {
   font-size: 0.75rem;
   padding: 4px 10px;
@@ -370,6 +404,7 @@ header.scrolled {
   border-radius: 20px;
   color: var(--color-text-sub);
 }
+
 .card-links a {
   margin-right: 20px;
   font-weight: 600;
@@ -378,19 +413,30 @@ header.scrolled {
   border-bottom: 1px solid transparent;
   transition: 0.2s;
 }
-.card-links a:hover { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+
+.card-links a:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
 
 /* =========================================
    7. Currently Working On & Footer
    ========================================= */
-.goal-list { list-style: none; }
+.goal-list {
+  list-style: none;
+}
+
 .goal-list li {
   padding: 15px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   padding-left: 35px;
 }
-.goal-list li:last-child { border-bottom: none; }
+
+.goal-list li:last-child {
+  border-bottom: none;
+}
+
 .goal-list li::before {
   content: '✔';
   position: absolute;
@@ -414,14 +460,27 @@ footer {
   transform: translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
+
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2.8rem; }
-  .nav-list { display: none; } /* Mobile nav should be handled with JS hamburger if needed */
-  .section { padding: 80px 0; }
-  .section-title { font-size: 2rem; }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  /* Mobile nav should be handled with JS hamburger if needed */
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
 }
